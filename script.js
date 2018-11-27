@@ -3,24 +3,42 @@ var abilites = ["BombResistance", "ColdBlooded", "Comeback", "Doubler", "DropRol
 				"ObjectShredder", "OpeningGambit", "QuickJump", "QuickRespawn", "RespawnPunisher", "RunSpeedUp", "SpecialChargeUp", "SpecialPowerUp", "SpecialSaver", "StealthJump", "SubPowerUp", "SwimSpeedUp", 
 				"Tenacity", "ThermalInk"]; 
 
-
+var counter = 50; 
 
 $(document).ready(main);
 
 function main(){
 
-	$("#randomize-btn").click(randomizeIcon); 
+	$("#randomize-btn").click(function(){
+		counter = 50; 
+		randomizeIcon()
+
+	}); 
 }
 
 function randomizeIcon(){
+	var i; 
+
 	var num1 = Math.floor(Math.random() * 25); 
 	var num2 = Math.floor(Math.random() * 25); 
 	var num3 = Math.floor(Math.random() * 25); 
 
-	getIcon(num1, 1); 
-	getIcon(num2, 2); 
-	getIcon(num3, 3); 
+
+	if(counter >= 0){
+
+	setTimeout(function(){
+			getIcon(num1, 1); 
+			getIcon(num2, 2); 
+			getIcon(num3, 3);
+			counter--;  
+			randomizeIcon()}
+	, 50);
+
 }
+
+	
+}
+
 function getIcon(num, iconNum){
 
 	var icon = abilites[num]; 
