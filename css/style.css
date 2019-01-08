@@ -11,11 +11,6 @@ body{
 }
 
 .center{
-  position: fixed; 
-  top: 50%; 
-  left: 50%; 
-  margin-top: -250px; 
-  margin-left: -500px; 
   background-color: #3D3737;
   width: 50%;
   height: 40%;
@@ -32,11 +27,13 @@ body{
 	display: inline-block; 
 }
 
-
-.gear-icon:hover{
-	background-color: grey; 
-}
-
 .ranomize-btn{
 	margin-top: 50px; 
+}
+
+.card{
+	margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 15em; 
 }
